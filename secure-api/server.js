@@ -283,8 +283,5 @@ app.listen(PORT, () => {
     console.log('   ✅ API Key Authentication');
     console.log('   ✅ CSRF Protection');
     console.log('   ✅ Input Validation');
-    console.log('\n🔑 Test Credentials:');
-    console.log('   Email: admin@juice-sh.op');
-    console.log('   Password: admin123');
-    console.log('   API Key: juice-shop-internal-2026\n');
+    console.log('🔑 Test Credentials: See .env.example file');
 });

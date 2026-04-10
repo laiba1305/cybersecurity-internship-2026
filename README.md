@@ -143,11 +143,8 @@ Tasks Completed:
 Test Credentials:
 
 \- Email: admin@juice-sh.op
-
-\- Password: admin123
-
-\- API Key: juice-shop-internal-2026
-
+Password: [See .env.example]
+API Key: [See .env.example]
 
 
 API Endpoints:

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  juice-shop:
+    image: bkimminich/juice-shop:latest
+    container_name: juice-shop
+    ports:
+      - "3000:3000"
+    networks:
+      - security-lab
+
+  secure-api:
+    build: ./secure-api
+    container_name: secure-api
+    ports:
+      - "4000:4000"
+    networks:
+      - security-lab
+    volumes:
+      - ./secure-api:/app
+      - /app/node_modules
+
+  dvwa:
+    image: vulnerables/web-dvwa:latest
+    container_name: dvwa
+    ports:
+      - "8080:80"
+    networks:
+      - security-lab
+
+  kali:
+    image: kalilinux/kali-rolling:latest
+    container_name: kali-pentest
+    command: tail -f /dev/null
+    networks:
+      - security-lab
+
+networks:
+  security-lab:
+    driver: bridge

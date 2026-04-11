@@ -1,16 +1,15 @@
 # 🔒 Cybersecurity Internship Project 2026
-## OWASP Juice Shop Security Assessment & Hardening (Weeks 4-6)
+## OWASP Juice Shop Security Assessment & Hardening (Weeks 1-6)
 
 **Intern:** Laiba Rana  
 **GitHub:** [laiba1305](https://github.com/laiba1305)  
-**Deadline:** April 14, 2026  
 **Environment:** Windows 11 | Docker | Node.js v24.14.1
 
 ---
 
 ## 📋 Project Overview
 
-This repository contains the complete security assessment, hardening implementation, and penetration testing of OWASP Juice Shop as part of the cybersecurity internship program. All tasks from Weeks 4-6 are documented with code, configurations, and audit reports.
+This repository contains the complete security assessment, hardening implementation, and penetration testing of OWASP Juice Shop as part of the cybersecurity internship program. All tasks from Weeks 1-6 are documented with code, configurations, screenshots, and audit reports.
 
 ---
 
@@ -35,23 +34,47 @@ Secure API	http://localhost:4000	Hardened Express API
 DVWA	http://localhost:8080	Additional test target
 📁 Repository Structure
 text
-secure-api/                  Week 4: Hardened Express API
-├── server.js                Main server with all security features
-├── package.json             Dependencies
-├── .env.example             Environment variables template
-└── middleware/              Security middleware
+week1-3-security-assessment/   Weeks 1-3: Vulnerability Discovery & Reporting
+├── screenshots/                XSS, SQLi, cookie exposure evidence
+├── findings.md                 Vulnerability assessment findings
+└── week1-3-security-report.md  Complete Weeks 1-3 report
 
-fail2ban/                    Week 4: Intrusion Detection
+secure-api/                     Week 4: Hardened Express API
+├── server.js                   Main server with all security features
+├── package.json                Dependencies
+├── .env.example                Environment variables template
+└── middleware/                 Security middleware
+
+fail2ban/                       Week 4: Intrusion Detection
 ├── config/
-│   └── jail.local           Fail2Ban jail configuration
-└── filter.d/                Log filters for Juice Shop and DVWA
+│   └── jail.local              Fail2Ban jail configuration
+└── filter.d/                   Log filters for Juice Shop and DVWA
 
-reports/                     All scan reports
-├── week5/                   SQLMap, Nmap, Nikto outputs
-└── week6/                   Final audit report, ZAP scan, Docker scan
+reports/                        All scan reports
+├── week5/                      SQLMap, Nmap, Nikto outputs
+└── week6/                      Final audit report, ZAP scan, Docker scan
 
-docker-compose.yml           All services configuration
-README.md                    This file
+docker-compose.yml              All services configuration
+README.md                       This file
+🔍 Weeks 1-3: Security Assessment & Basic Hardening
+✅ Vulnerabilities Discovered (Juice Shop - Port 3000)
+Vulnerability	Location	Severity	Evidence
+Reflected XSS	Search Bar	HIGH	screenshots/03-xss-alert-success.png
+SQL Injection	Login Form	CRITICAL	screenshots/05-admin-login-sqli.png
+Cookie Exposure	Search Bar (XSS)	HIGH	screenshots/04-cookie-exposure.png
+Missing CSP Header	All Pages	MEDIUM	Headers analysis
+Missing HSTS Header	All Pages	MEDIUM	Headers analysis
+✅ Basic Security Measures Implemented
+Input Validation: validator.js
+
+Password Hashing: bcrypt (10 rounds)
+
+JWT Authentication: jsonwebtoken
+
+Security Headers: Helmet.js
+
+Logging: Winston
+
 🛡️ Week 4: Advanced Threat Detection and API Security
 ✅ Tasks Completed
 Intrusion Detection: Fail2Ban with custom filters
@@ -134,7 +157,7 @@ Compliance Check: OWASP Top 10
 
 Final Penetration Test: Burp Suite
 
-📈 Vulnerability Summary
+📈 Vulnerability Summary (Before vs After)
 Vulnerability	Initial Severity	Final Status	Remediation
 SQL Injection (Login)	CRITICAL	✅ FIXED	Parameterized queries
 SQL Injection (Search)	CRITICAL	✅ FIXED	ORM parameterization
@@ -186,7 +209,7 @@ curl -X POST http://localhost:4000/api/update-profile -H "Authorization: Bearer 
 📚 Technologies Used
 Category	Technologies
 Backend	Node.js, Express
-Security	Helmet, CORS, rate-limit, JWT, bcrypt, csurf
+Security	Helmet, CORS, rate-limit, JWT, bcrypt, csurf, validator
 Testing	Kali Linux, SQLMap, Nmap, Nikto, OWASP ZAP, Burp Suite
 Monitoring	Fail2Ban, Winston
 Containerization	Docker, Docker Compose, Docker Scout
@@ -201,6 +224,8 @@ OWASP Top 10: Industry standard framework for web application security
 Automation: Security scanning tools catch vulnerabilities humans might miss
 
 Documentation: Clear reporting is as important as technical fixes
+
+Full Lifecycle: From discovery → remediation → verification
 
 👤 Author
 Laiba Rana

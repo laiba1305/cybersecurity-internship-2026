@@ -70,8 +70,8 @@ A06: Vulnerable Components	✅	npm audit fix
 A07: Authentication Failures	✅	JWT expiry + login limits
 A08: Software Integrity	✅	Docker Scout
 A09: Logging Failures	✅	Winston logger
-A10: SSRF	✅	Input validation
-Compliance Score: 10/10 (100%)
+A10: SSRF ⚠️ Mitigated  URL allow-list + no outbound user-driven requests
+Risk Mitigation: All applicable OWASP Top 10 categories addressed
 
 3. Final Penetration Test Summary
 Attack Vector	Result	Defense

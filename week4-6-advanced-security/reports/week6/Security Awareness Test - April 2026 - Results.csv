@@ -1,0 +1,2 @@
+id,status,ip,latitude,longitude,send_date,reported,modified_date,email,first_name,last_name,position
+GgMUBtM,Submitted Data,172.17.0.1,0,0,2026-04-11T12:07:29.658184539Z,false,2026-04-11T12:08:11.882252482Z,test@company.com,Test,Employee,Employee

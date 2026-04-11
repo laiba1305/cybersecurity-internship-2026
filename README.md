@@ -168,7 +168,16 @@ Missing HSTS	MEDIUM	✅ FIXED	Helmet HSTS
 CORS Wildcard	MEDIUM	✅ FIXED	Origin whitelist
 No Rate Limiting	MEDIUM	✅ FIXED	express-rate-limit
 CSRF Vulnerability	MEDIUM	✅ FIXED	csurf tokens
-🏆 OWASP Top 10 Compliance (10/10 - 100%)
+
+🏆 OWASP Top 10 Risk Mitigation Summary
+Summary Table
+Fix	File	Priority	Time
+Remove unsafe-inline	server.js	🔴 CRITICAL	2 min
+Fix SSRF claim	README.md, week6/README.md	🔴 CRITICAL	5 min
+Add csurf deprecation note	week4/README.md	🔴 CRITICAL	2 min
+Redact API key	Word doc	🔴 CRITICAL	1 min
+Update compliance heading	README.md	🟡 Optional	1 min
+
 Category	Status	Implementation
 A01: Broken Access Control	✅	JWT + API Keys
 A02: Cryptographic Failures	✅	bcrypt hashing

@@ -111,6 +111,12 @@ const verifyToken = (req, res, next) => {
 // 6. CSRF Protection
 const csrfProtection = csrf({ cookie: true });
 
+// 7. Zero Trust Security Middleware (BONUS)
+const { verifyRequest } = require('./middleware/zero-trust');
+app.use(verifyRequest);
+// 8. Web Application Firewall (BONUS)
+const wafMiddleware = require('./middleware/waf');
+app.use(wafMiddleware);
 // ============================================
 // DATABASE MOCK (Replace with real DB)
 // ============================================
@@ -135,11 +141,12 @@ app.get('/health', (req, res) => {
             helmet: 'enabled',
             cors: 'configured',
             rateLimit: 'enabled',
-            csrf: 'enabled'
+            csrf: 'enabled',
+            zeroTrust: 'enabled',
+            waf: 'enabled'
         }
     });
 });
-
 // Get CSRF token
 app.get('/api/csrf-token', csrfProtection, (req, res) => {
     res.json({ csrfToken: req.csrfToken() });
@@ -283,5 +290,7 @@ app.listen(PORT, () => {
     console.log('   ✅ API Key Authentication');
     console.log('   ✅ CSRF Protection');
     console.log('   ✅ Input Validation');
-    console.log('🔑 Test Credentials: See .env.example file');
+    console.log('   ✅ Zero Trust Security (BONUS)');
+    console.log('   ✅ WAF (SQLi/XSS/Path Traversal Protection)');
+    console.log('\n🔑 Test Credentials: See .env.example file');
 });

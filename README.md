@@ -214,6 +214,17 @@ Testing	Kali Linux, SQLMap, Nmap, Nikto, OWASP ZAP, Burp Suite
 Monitoring	Fail2Ban, Winston
 Containerization	Docker, Docker Compose, Docker Scout
 Version Control	Git, GitHub
+---
+
+## ⭐ Bonus Challenges (Completed & Verified)
+
+| Challenge | Implementation | Verification |
+|-----------|---------------|--------------|
+| **Zero Trust Security** | Custom middleware in `secure-api/middleware/zero-trust.js` | Blocks requests without User-Agent header |
+| **Web Application Firewall** | Custom WAF middleware with SQLi/XSS/Path Traversal rules | Blocks malicious payloads, allows legitimate traffic |
+| **Phishing Simulation** | GoPhish + Mailhog campaign | Real campaign with 100% click rate, 42-second response time |
+
+**Evidence:** See `week4-6-advanced-security/reports/week6/phishing-simulation.md` for full report.
 📝 Key Learnings
 Defense in Depth: Multiple security layers provide comprehensive protection
 

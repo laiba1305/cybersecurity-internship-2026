@@ -173,5 +173,6 @@ All Week 4 tasks were successfully completed:
 ✅ CSRF protection verified
 
 The API is production-ready with defense-in-depth.
+**Note:** The `csurf` library is deprecated. In production, migrate to `csrf-csrf` or framework-native CSRF protection. The double-submit cookie pattern implemented here remains industry standard.
 
 *End of Week 4 Report - Laiba Rana | Cybersecurity Internship | April 2026*

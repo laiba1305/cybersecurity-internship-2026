@@ -21,7 +21,7 @@ git clone https://github.com/laiba1305/cybersecurity-internship-2026.git
 cd cybersecurity-internship-2026
 
 # Install dependencies
-cd secure-api
+cd week4-6-advanced-security/secure-api
 npm install
 
 # Start the secure API
@@ -33,7 +33,7 @@ OWASP Juice Shop	http://localhost:3000	Vulnerable test application
 Secure API	http://localhost:4000	Hardened Express API
 DVWA	http://localhost:8080	Additional test target
 📁 Repository Structure
-
+text
 week1-3-security-assessment/   Weeks 1-3: Vulnerability Discovery & Reporting
 ├── screenshots/                XSS, SQLi, cookie exposure evidence
 ├── findings.md                 Vulnerability assessment findings
@@ -52,7 +52,8 @@ week4-6-advanced-security/      Weeks 4-6: Advanced Security & Hardening
 ├── reports/                    All scan reports
 │   ├── week4/                  Fail2Ban and API security reports
 │   ├── week5/                  SQLMap, Nmap, Nikto outputs
-│   └── week6/                  Final audit report, phishing simulation
+│   ├── week6/                  Final audit report, phishing simulation
+│   └── bonus-challenges.md     Consolidated bonus report
 ├── screenshots/                Phishing simulation evidence
 ├── waf/                        ModSecurity configuration
 └── docker-compose.yml          All services configuration
@@ -170,16 +171,7 @@ Missing HSTS	MEDIUM	✅ FIXED	Helmet HSTS
 CORS Wildcard	MEDIUM	✅ FIXED	Origin whitelist
 No Rate Limiting	MEDIUM	✅ FIXED	express-rate-limit
 CSRF Vulnerability	MEDIUM	✅ FIXED	csurf tokens
-
 🏆 OWASP Top 10 Risk Mitigation Summary
-Summary Table
-Fix	File	Priority	Time
-Remove unsafe-inline	server.js	🔴 CRITICAL	2 min
-Fix SSRF claim	README.md, week6/README.md	🔴 CRITICAL	5 min
-Add csurf deprecation note	week4/README.md	🔴 CRITICAL	2 min
-Redact API key	Word doc	🔴 CRITICAL	1 min
-Update compliance heading	README.md	🟡 Optional	1 min
-
 Category	Status	Implementation
 A01: Broken Access Control	✅	JWT + API Keys
 A02: Cryptographic Failures	✅	bcrypt hashing
@@ -190,7 +182,7 @@ A06: Vulnerable Components	✅	npm audit fixed
 A07: Auth Failures	✅	JWT + login limits
 A08: Software Integrity	✅	Docker Scout
 A09: Logging Failures	✅	Winston logger
-A10: SSRF	✅	Input validation
+A10: SSRF	⚠️ Mitigated	Input validation; full controls recommended for production
 🐳 Docker Services
 Service	Port	Container	Purpose
 Juice Shop	3000	juice-shop	Vulnerable test app
@@ -225,28 +217,25 @@ Testing	Kali Linux, SQLMap, Nmap, Nikto, OWASP ZAP, Burp Suite
 Monitoring	Fail2Ban, Winston
 Containerization	Docker, Docker Compose, Docker Scout
 Version Control	Git, GitHub
----
-
 ⭐ Bonus Challenges (Completed & Verified)
+Challenge	Implementation	Verification
+Zero Trust Security	secure-api/middleware/zero-trust.js	Blocks requests without credentials
+Web Application Firewall	secure-api/middleware/waf.js (19 detection rules)	Blocks SQLi, XSS, path traversal
+Phishing Simulation	GoPhish + Mailhog campaign	100% click rate, 42-second response
+Evidence: See week4-6-advanced-security/reports/bonus-challenges.md for full report.
 
-| Challenge | Implementation | Verification |
-| Zero Trust Security | Custom middleware in `secure-api/middleware/zero-trust.js` | Blocks requests without User-Agent header |
-| Web Application Firewall | Custom WAF middleware with SQLi/XSS/Path Traversal rules | Blocks malicious payloads, allows legitimate traffic |
-| Phishing Simulation | GoPhish + Mailhog campaign | Real campaign with 100% click rate, 42-second response time |
-
-**Evidence:** See `week4-6-advanced-security/reports/week6/phishing-simulation.md` for full report.
 📝 Key Learnings
-Defense in Depth: Multiple security layers provide comprehensive protection
+Defense in Depth: Multiple security layers provide comprehensive protection.
 
-Ethical Hacking: Understanding attack vectors is essential for defense
+Ethical Hacking: Understanding attack vectors is essential for defense.
 
-OWASP Top 10: Industry standard framework for web application security
+OWASP Top 10: Industry standard framework for web application security.
 
-Automation: Security scanning tools catch vulnerabilities humans might miss
+Automation: Security scanning tools catch vulnerabilities humans might miss.
 
-Documentation: Clear reporting is as important as technical fixes
+Documentation: Clear reporting is as important as technical fixes.
 
-Full Lifecycle: From discovery → remediation → verification
+Full Lifecycle: From discovery → remediation → verification.
 
 👤 Author
 Laiba Rana

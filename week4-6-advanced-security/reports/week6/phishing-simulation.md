@@ -77,7 +77,6 @@ The test user exhibited all risky behaviors:
 
 - **Mailhog Screenshot:** Delivered email with subject "ACTION REQUIRED"
 - **GoPhish Dashboard:** Campaign metrics showing 100% click rate
-- **CSV Export:** `Security Awareness Test - April 2026 - Results.csv`
 - ### Mailhog - Delivered Phishing Email
 ![Mailhog Phishing Email](../../screenshots/mailhog-phishing-email.png)
 
@@ -93,7 +92,13 @@ The test user exhibited all risky behaviors:
 - **Click Rate:** 100%
 - **Credentials Captured:** 1
 - **Time to Click:** 42 seconds
+### CSV Export - Raw Campaign Data
+[Download Campaign Results CSV](Security%20Awareness%20Test%20-%20April%202026%20-%20Results.csv)
 
+**CSV Contents:**
+| Campaign ID | Status | Email | Time to Click |
+|-------------|--------|-------|---------------|
+| GgMUBtM | Submitted Data | test@company.com | 42 seconds |
 ---
 
 ## Conclusion

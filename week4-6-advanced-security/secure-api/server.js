@@ -23,8 +23,8 @@ app.use(helmet({
     contentSecurityPolicy: {
         directives: {
             defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "'unsafe-inline'"],
-            styleSrc: ["'self'", "'unsafe-inline'"],
+            scriptSrc: ["'self'"],  // Removed unsafe-inline for security
+            styleSrc: ["'self'", "'unsafe-inline'"],  // Required for Juice Shop UI compatibility
             imgSrc: ["'self'", "data:", "https:"],
         },
     },

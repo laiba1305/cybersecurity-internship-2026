@@ -33,28 +33,30 @@ OWASP Juice Shop	http://localhost:3000	Vulnerable test application
 Secure API	http://localhost:4000	Hardened Express API
 DVWA	http://localhost:8080	Additional test target
 📁 Repository Structure
-text
+
 week1-3-security-assessment/   Weeks 1-3: Vulnerability Discovery & Reporting
 ├── screenshots/                XSS, SQLi, cookie exposure evidence
 ├── findings.md                 Vulnerability assessment findings
 └── week1-3-security-report.md  Complete Weeks 1-3 report
 
-secure-api/                     Week 4: Hardened Express API
-├── server.js                   Main server with all security features
-├── package.json                Dependencies
-├── .env.example                Environment variables template
-└── middleware/                 Security middleware
+week4-6-advanced-security/      Weeks 4-6: Advanced Security & Hardening
+├── secure-api/                 Hardened Express API
+│   ├── server.js               Main server with all security features
+│   ├── package.json            Dependencies
+│   ├── .env.example            Environment variables template
+│   └── middleware/             Security middleware (Zero Trust, WAF)
+├── fail2ban/                   Intrusion Detection
+│   ├── config/
+│   │   └── jail.local          Fail2Ban jail configuration
+│   └── filter.d/               Log filters for Juice Shop and DVWA
+├── reports/                    All scan reports
+│   ├── week4/                  Fail2Ban and API security reports
+│   ├── week5/                  SQLMap, Nmap, Nikto outputs
+│   └── week6/                  Final audit report, phishing simulation
+├── screenshots/                Phishing simulation evidence
+├── waf/                        ModSecurity configuration
+└── docker-compose.yml          All services configuration
 
-fail2ban/                       Week 4: Intrusion Detection
-├── config/
-│   └── jail.local              Fail2Ban jail configuration
-└── filter.d/                   Log filters for Juice Shop and DVWA
-
-reports/                        All scan reports
-├── week5/                      SQLMap, Nmap, Nikto outputs
-└── week6/                      Final audit report, ZAP scan, Docker scan
-
-docker-compose.yml              All services configuration
 README.md                       This file
 🔍 Weeks 1-3: Security Assessment & Basic Hardening
 ✅ Vulnerabilities Discovered (Juice Shop - Port 3000)
